@@ -1,0 +1,12 @@
+# Settings
+DatabaseSystem/DatabaseSystem/settings.py
+
+# Virtual Env
+env
+
+# Cache
+__pycache__/
+*.pyc
+
+# Other
+db.sqlite3
