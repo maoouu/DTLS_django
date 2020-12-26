@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from Accounts import views as accounts
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include("Main.urls"))
+    path('superuser/', admin.site.urls),
+    path('register/', accounts.register, name="register"),
+    path('', include("EnvergaDB.urls")),
+    path('', include("django.contrib.auth.urls")),
 ]
