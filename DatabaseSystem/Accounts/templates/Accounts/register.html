@@ -4,14 +4,16 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<h2>Register</h2>
-<hr class="mt-0">
-<form method="POST" class="form-group">
-    {% csrf_token %}
-    {{form|crispy}}
-    <div class="d-grid gap-2 d-md-block">
-        <button type="submit" class="btn btn-success">Register</button>
-        <button type="button" class="btn btn-link" ><a href="../login/">Already Have An Account</a></button>
-    </div>
-</form>
+<div class="col-6 align-self-center">
+    <h2>Register</h2>
+    <hr class="mt-0">
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{form|crispy}}
+        <div class="d-grid gap-2 d-md-block">
+            <button type="submit" class="btn btn-success">Register</button>
+            <button type="button" class="btn btn-link" ><a href="../login/">Already Have An Account</a></button>
+        </div>
+    </form>
+</div>
 {% endblock %}

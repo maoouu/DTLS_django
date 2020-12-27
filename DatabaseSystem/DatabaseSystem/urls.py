@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Accounts import views as accounts
+from EnvergaDB import views as envergadb
 
 urlpatterns = [
     path('superuser/', admin.site.urls),
     path('register/', accounts.register, name="register"),
-    path('', include("EnvergaDB.urls")),
+    path('', envergadb.index, name="index"),
+    path('dashboard/', envergadb.dash, name="dashboard"),
     path('', include("django.contrib.auth.urls")),
 ]
