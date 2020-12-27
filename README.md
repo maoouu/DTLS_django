@@ -1,5 +1,5 @@
 # Data Tracking and Log System
-A database ledger system powered by Django! <br>
+A database logging system powered by Django! <br>
 
 ## Installation:
 **Resources Used:**
