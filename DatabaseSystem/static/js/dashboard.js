@@ -15,6 +15,8 @@ function closeText() {
     text.parentNode.removeChild(text);
 }
 
-function promptDelete() {
-    return confirm('Are you sure you want to delete item? You cannot undo this action.');
+function promptDelete(e) {
+    if (!confirm('Are you sure you want to delete item? You cannot undo this action.')) {
+        e.preventDefault();
+    }
 }
