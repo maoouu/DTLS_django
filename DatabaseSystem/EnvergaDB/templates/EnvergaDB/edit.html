@@ -1,0 +1,19 @@
+{% extends 'EnvergaDB/base.html' %}
+
+{% block title %}Edit{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="col-6 align-self-center">
+    <h4>Edit Details</h4>
+    <hr class="mt-0">
+    <form method="POST" action="/edit/{{record.id}}">
+        {% csrf_token %}
+        {{form|crispy}}
+        <div class="d-grid gap-2 d-md-block">
+            <button type="submit" class="btn btn-success">Update</button>
+            <button type="button" class="btn btn-link" ><a href="../dashboard/">Cancel</a></button>
+        </div>
+    </form>
+</div>
+{% endblock %}

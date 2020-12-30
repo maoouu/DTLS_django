@@ -19,9 +19,14 @@ from Accounts import views as accounts
 from EnvergaDB import views as envergadb
 
 urlpatterns = [
+    path('', envergadb.index, name="index"),
+    path('', include("django.contrib.auth.urls")),
+
     path('superuser/', admin.site.urls),
     path('register/', accounts.register, name="register"),
-    path('', envergadb.index, name="index"),
     path('dashboard/', envergadb.dash, name="dashboard"),
-    path('', include("django.contrib.auth.urls")),
+
+    path('add/', envergadb.add, name="add"),
+    path('edit/<int:id>', envergadb.update, name="update"),
+    path('delete/<int:id>', envergadb.delete, name="delete"),
 ]

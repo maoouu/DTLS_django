@@ -5,6 +5,16 @@
 
 {% block content %}
 <div class="col-6 align-self-center">
+
+    {% if messages %}
+    {% for message in messages %}
+    <div id="prompt" class="alert alert-success" role="alert">
+        {{message}}
+        <button type="button" class="close" onclick="closeText()"><span aria-hidden="true">&times;</span></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
     <h2>Login</h2>
     <hr class="mt-0">
     <form method="POST" class="form-group">
@@ -17,3 +27,4 @@
     </form>
 </div>
 {% endblock %}
+
