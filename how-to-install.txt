@@ -1,0 +1,16 @@
+# Create and activate virtual environment
+virtualenv -p python3 env
+./env/Scripts/activate or ./env/bin/activate
+
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Create MySQL database first, then run migrations
+cd ./DatabaseSystem/
+python manage.py migrate
+
+# Create Superuser
+python manage.py createsuperuser
+
+# Run Django Web Server
+python manage.py runserver
