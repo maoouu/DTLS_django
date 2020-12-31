@@ -4,9 +4,9 @@ from django.contrib.auth.decorators import login_required
 
 from .models import Records  # models.py
 from .forms import RecordForm  # forms.py
+
+
 # Create your views here.
-
-
 def index(response):
     return redirect("/dashboard")
 
