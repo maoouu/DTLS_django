@@ -22,10 +22,9 @@
             <!-- Table Header -->
             <thead>
                 <th>From</th>
-                <th>File Content</th>
+                <th>Description</th>
                 <th>Date Modified</th>
                 <th>Date Created</th>
-                <th>Action Taken</th>
                 <th>Status</th>
                 <th>Edit</th>
                 <th>Delete</th>
@@ -36,10 +35,9 @@
                 {% for record in records %}
                 <tr>
                     <td>{{record.author}}</td>
-                    <td>{{record.file_desc}}</td>
+                    <td>{{record.description}}</td>
                     <td>{{record.date_modified}}</td>
                     <td>{{record.date_created}}</td>
-                    <td>{{record.action_desc}}</td>
                     <td>{{record.status}}</td>
                     <!-- Edit -->
                     <td>

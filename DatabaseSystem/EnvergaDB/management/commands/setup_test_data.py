@@ -22,7 +22,7 @@ AUTHORS = [
     "OQI", "LIBRARY",
     "ICTD", "LABORATORIES"
 ]
-FILE_DESC = [
+DESCRIPTION = [
     f"Travel To {location} On {date} [No Budget Indicated]",
     "Affiliation Fees Budget Request",
     "Info On Mass",
@@ -37,12 +37,6 @@ STATUS = [
     "Approved",
     "Denied",
     "Returned",
-]
-ACTIONS = [
-    "Approved",
-    "Forwarded",
-    "Noted",
-    "Viewed",
 ]
 
 
@@ -59,8 +53,7 @@ class Command(BaseCommand):
         for _ in range(20):
             RecordsFactory(
                 author=random.choice(AUTHORS),
-                file_desc=random.choice(FILE_DESC),
-                action_desc=random.choice(ACTIONS),
+                description=random.choice(DESCRIPTION),
                 status=random.choice(STATUS)
             )
         self.stdout.write("Sample data has been generated.")

@@ -25,7 +25,7 @@ SECRET_KEY = 'bq=y74)!q1kn&vusgy8u$97a%(xy81(1py@h3&1mzgg_20nr&1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['10.0.2.2', '127.0.0.1']
 
 
 # Application definition
@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'EnvergaDB.apps.EnvergaDBConfig',
     'Accounts.apps.AccountsConfig',
     'crispy_forms',
+    'rest_framework',
+    'apis',
 ]
 
 MIDDLEWARE = [
@@ -92,7 +94,10 @@ DATABASES = {
         'USERNAME': 'Admin',
         'PASSWORD': 'xrm600700',
         'PORT': '3306',
-        'HOST': 'localhost'
+        'HOST': 'localhost',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
 

@@ -21,6 +21,7 @@ from EnvergaDB import views as envergadb
 urlpatterns = [
     path('', envergadb.index, name="index"),
     path('', include("django.contrib.auth.urls")),
+    path('api/', include("apis.urls")),
 
     path('superuser/', admin.site.urls),
     path('register/', accounts.register, name="register"),

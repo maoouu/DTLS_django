@@ -17,13 +17,14 @@ CURRENT_TIME = timezone.now
 
 
 class Records(models.Model):
-    author = models.CharField(max_length=50, verbose_name="From")
-    file_desc = models.CharField(max_length=100, verbose_name="File Content")
+    author = models.CharField(max_length=50, verbose_name="Author")
+    description = models.CharField(max_length=100, default='No description added',
+                                   verbose_name="Description")
     date_modified = models.DateField(
         auto_now=True, verbose_name="Date Modified")
     date_created = models.DateField(
         default=CURRENT_TIME, verbose_name="Date Created")
-    action_desc = models.CharField(max_length=100, verbose_name="Action Taken")
+    #action_desc = models.CharField(max_length=100, verbose_name="Action Taken")
     status = models.CharField(
         max_length=50, choices=STATUS, default='Pending', verbose_name="Status")
 
