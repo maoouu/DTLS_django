@@ -26,7 +26,7 @@ class Records(models.Model):
         default=CURRENT_TIME, verbose_name="Date Created")
     #action_desc = models.CharField(max_length=100, verbose_name="Action Taken")
     status = models.CharField(
-        max_length=50, choices=STATUS, default='Pending', verbose_name="Status")
+        max_length=100, choices=STATUS, default='Pending', verbose_name="Status")
 
     def __str__(self):
         return self.author

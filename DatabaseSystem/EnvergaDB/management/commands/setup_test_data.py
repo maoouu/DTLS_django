@@ -10,34 +10,7 @@ from faker import Faker
 
 Faker.seed(0)
 fake = Faker('en_PH')
-location = fake.luzon_province()
-date = fake.future_date()
-
-AUTHORS = [
-    "CAS", "CED",
-    "IGSR", "CCJC",
-    "CBA", "CNAHS",
-    "CAFA", "CME",
-    "BED", "HRD",
-    "OQI", "LIBRARY",
-    "ICTD", "LABORATORIES"
-]
-DESCRIPTION = [
-    f"Travel To {location} On {date} [No Budget Indicated]",
-    "Affiliation Fees Budget Request",
-    "Info On Mass",
-    "Travel Order",
-    "Budget Request",
-]
-STATUS = [
-    "Pending",
-    "Acknowledged",
-    "Endorsed",
-    "Recommended to President",
-    "Approved",
-    "Denied",
-    "Returned",
-]
+DATA_COUNT = 100  # Amount of sample data to generate
 
 
 class Command(BaseCommand):
@@ -50,7 +23,39 @@ class Command(BaseCommand):
 
         self.stdout.write("Creating new data...")
 
-        for _ in range(20):
+        for _ in range(DATA_COUNT):
+
+            location = fake.luzon_province()
+            date = fake.future_date()
+
+            AUTHORS = [
+                "CAS", "CED",
+                "IGSR", "CCJC",
+                "CBA", "CNAHS",
+                "CAFA", "CME",
+                "BED", "HRD",
+                "OQI", "LIBRARY",
+                "ICTD", "LABORATORIES"
+            ]
+
+            STATUS = [
+                "Pending",
+                "Acknowledged",
+                "Endorsed",
+                "Recommended to President",
+                "Approved",
+                "Denied",
+                "Returned",
+            ]
+
+            DESCRIPTION = [
+                f"Travel To {location} On {date} [No Budget Indicated]",
+                "Affiliation Fees Budget Request",
+                "Info On Mass",
+                "Travel Order",
+                "Budget Request",
+            ]
+
             RecordsFactory(
                 author=random.choice(AUTHORS),
                 description=random.choice(DESCRIPTION),
