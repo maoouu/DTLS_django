@@ -1,22 +1,22 @@
 # Create and activate virtual environment
-virtualenv -p python3 env
+python -m venv env
 ./env/Scripts/activate or ./env/bin/activate
 
 # Install Python dependencies
 pip install -r requirements.txt
 
-# Create MySQL database first, then run migrations
+# Create a MySQL database named "djangoweb", then run migrations
 cd ./DatabaseSystem/
 python manage.py migrate
 
 # Create Superuser
 python manage.py createsuperuser
 
-# Run Django Web Server
-python manage.py runserver
+# Run Django Web Server, by default it will run on port 8000
+python manage.py runserver [:PORT_NUMBER]
 
 # Create Sample Data
 # By default, it will generate 100 sample data
-python manage.py setup_test_data <number-of-data-to-generate>
-
-ex. python manage.py setup_test_data 50
+# The number of sample data to generate 
+# can be configured in "management\commands\setup_test_data.py"
+python manage.py setup_test_data

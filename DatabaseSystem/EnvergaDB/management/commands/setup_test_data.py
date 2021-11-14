@@ -10,20 +10,20 @@ from faker import Faker
 
 Faker.seed(0)
 fake = Faker('en_PH')
-
+DATA_COUNT = 100
 
 
 class Command(BaseCommand):
     help = "Generates sample data to EnvergaDB."
 
     @transaction.atomic
-    def handle(self, DATA_COUNT = 100, *args, **kwargs):
+    def handle(self, *args, **kwargs):
         self.stdout.write("Deleting old data...")
         Records.objects.all().delete()
 
         # DATA_COUNT - Amount of sample data to generate
         # It is set to 100 by default
-        self.stdout.write("Creating new data...")
+        self.stdout.write(f"Creating new sample data({DATA_COUNT})...")
 
         for _ in range(DATA_COUNT):
 
