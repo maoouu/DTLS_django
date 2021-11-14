@@ -14,3 +14,9 @@ python manage.py createsuperuser
 
 # Run Django Web Server
 python manage.py runserver
+
+# Create Sample Data
+# By default, it will generate 100 sample data
+python manage.py setup_test_data <number-of-data-to-generate>
+
+ex. python manage.py setup_test_data 50
